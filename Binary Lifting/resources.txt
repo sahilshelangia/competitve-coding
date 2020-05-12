@@ -1,0 +1,4 @@
+https://cp-algorithms.com/graph/lca_binary_lifting.html
+
+-----video link-----
+https://www.youtube.com/watch?v=6Q7OrMi0Vvc

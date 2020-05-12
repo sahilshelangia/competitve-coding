@@ -1,0 +1,3 @@
+https://www.topcoder.com/community/competitive-programming/tutorials/line-sweep-algorithms/
+https://www.hackerearth.com/practice/math/geometry/line-sweep-technique/tutorial/
+https://www.youtube.com/watch?v=2QkIH2hF_lw&list=PLi0ZM-RCX5nvImim3_ilsdLOtDDkOWt-X&index=3
