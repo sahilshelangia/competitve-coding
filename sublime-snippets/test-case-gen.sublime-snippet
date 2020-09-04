@@ -1,5 +1,8 @@
 <snippet>
 	<content><![CDATA[
+/*
+  Author: Sahil Yadav, IIITM Gwalior
+*/
 #include <bits/stdc++.h>
 #include <unistd.h>
 #include <windows.h>
@@ -15,6 +18,18 @@
 const ll MOD=1e9+7;
 using namespace std;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+bool dirExists(const std::string& dirName_in)
+{
+  DWORD ftyp = GetFileAttributesA(dirName_in.c_str());
+  if (ftyp == INVALID_FILE_ATTRIBUTES)
+    return false;  //something is wrong with your path!
+
+  if (ftyp & FILE_ATTRIBUTE_DIRECTORY)
+    return true;   // this is a directory!
+
+  return false;    // this is not a directory!
+}
 string suffix(int x){
 	string ans="";
 	while(x){
@@ -53,20 +68,19 @@ void genInput(int test){
 void genOutput(int test){
 	string fileName="TestCase/out"+suffix(test);
 	freopen(fileName.c_str(),"w",stdout);
-	
-	/*Code here for genrating the output file*/
 	populateOutput("TestCase/in"+suffix(test));
 	fclose(stdout);
 }
 
 int main()
 {
-	int t;
-	cin>>t;
-	if(GetFileAttributesA("TestCase"))
+	if(dirExists("TestCase"))
 		system("rmdir /s /q TestCase");
 	mkdir("TestCase");
-	for(int test=0;test<t;++test){
+
+	// number of testcase from st to en.
+	int st=0,en=10;
+	for(int test=st;test<=en;++test){
 		genInput(test);
 		genOutput(test);
 	}

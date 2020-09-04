@@ -36,18 +36,11 @@ int main()
 		v.pb(arr[0]);
 		for(int i=1;i<n;i++)
 		{
-			int indx=upper_bound(v.begin(),v.end(),arr[i])-v.begin();
-			if(indx==0){
-			    if(v[indx]>arr[i])
-			        v[indx]=arr[i];
-			}
-			else if(v[indx-1]!=arr[i])
-			{
-				if(indx==v.size())
-					v.pb(arr[i]);
-				else if(v[indx-1]!=arr[i])
-					v[indx]=arr[i];
-			}
+			vector<int>::iterator it=lower_bound(v.begin(),v.end(),arr[i]);
+			if(it==v.end())
+				v.pb(arr[i]);
+			else
+				*it=arr[i];
 		}
 		int ans=v.size();
 		cout<<ans<<endl;
