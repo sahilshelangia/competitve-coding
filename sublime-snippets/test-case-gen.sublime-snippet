@@ -45,7 +45,7 @@ string suffix(int x){
 	return ans;
 }
 
-void populateInput(){
+void populateInput(int test){
 	
 }
 
@@ -61,7 +61,7 @@ void populateOutput(string inputFile){
 void genInput(int test){
 	string fileName="TestCase/in"+suffix(test);
 	freopen(fileName.c_str(),"w",stdout);
-	populateInput();
+	populateInput(test);
 	fclose(stdout);
 }
 
@@ -78,9 +78,7 @@ int main()
 		system("rmdir /s /q TestCase");
 	mkdir("TestCase");
 
-	// number of testcase from st to en.
-	int st=0,en=10;
-	for(int test=st;test<=en;++test){
+	for(int test=0;test<10;++test){
 		genInput(test);
 		genOutput(test);
 	}
