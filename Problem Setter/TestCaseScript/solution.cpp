@@ -1,5 +1,3 @@
-<snippet>
-	<content><![CDATA[
 /*
   Author: Sahil Yadav, IIITM Gwalior
 */
@@ -16,17 +14,12 @@
 const ll MOD=1e9+7;
 using namespace std;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int main()
+
+int main(int argc, char *argv[])
 {
 	#ifndef LOCAL
 	fast;
 	#endif
-
+	
 	return 0;
 }
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>cpp</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.c++</scope>
-</snippet>
