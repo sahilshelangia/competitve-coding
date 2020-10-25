@@ -1,0 +1,24 @@
+{
+    "shell_cmd": "g++ -std=c++11 -Wall \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\"",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector": "source.c++, source.cpp, source.cc, source.cxx",
+
+    "variants":
+    [
+        {
+            "name": "Run in Terminal",
+            "linux": {
+                "shell_cmd": "ulimit -s unlimited && g++ -std=c++17 -D LOCAL -Wall \"${file}\" -o \"sublime_output_cpp\" && gnome-terminal -- bash -c \"${file_path}/sublime_output_cpp&& echo && echo Press ENTER to continue && read line && exit\"", // for gnome-terminal
+                },
+            "shell": true,
+        },
+        {
+            "name": "Sanitize",
+            "linux": {
+            "shell_cmd": "ulimit -s unlimited && g++ -std=c++17 -D LOCAL -Wall \"${file}\" -o \"sublime_output_cpp\" -fsanitize=undefined -D_GLIBCXX_DEBUG -g && gnome-terminal -- bash -c \"${file_path}/sublime_output_cpp&& echo && echo Press ENTER to continue && read line && exit\"", // for gnome-terminal     
+                },
+            "shell":true, 
+        },
+    ]
+}

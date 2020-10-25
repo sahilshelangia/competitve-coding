@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+/*
+  Author: Sahil Yadav, IIITM Gwalior
+*/
+#include "bits/stdc++.h"
+#define ll long long
+#define pb push_back
+#define all(x) x.begin(),x.end()
+#define MAX 200005
+#define endl '\n'
+const ll MOD=1e9+7;
+using namespace std;
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int main()
+{
+	#ifndef LOCAL
+	ios_base::sync_with_stdio(0);
+	cin.tie(0); cout.tie(0);
+	#endif
+	
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cpp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
